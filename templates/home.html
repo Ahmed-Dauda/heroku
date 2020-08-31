@@ -1,0 +1,25 @@
+{% extends 'base.html' %}  
+
+{%  block head %}
+<link rel="stylesheet" href="{{url_for ('static', filename= '/css/main.css')}}" type="text/css"/>
+{%  endblock %}
+
+{% block content %}
+
+ <form action="/posts" method="POST">
+ <input type="text" name="fname">
+ <button type="submit">Click Me</button>
+</form>
+
+{% for post in posts %}
+     <h1>{{post.title}}</h1>
+     <p>{{post.body}}</p>
+     <img {{post.image}} width="100%">
+{% endfor %}
+
+
+ {% endblock %}
+ 
+
+   
+     
